@@ -1,0 +1,229 @@
+/* General navbar styling */
+.navbar {
+    background-color: #007bff; /* Blue background color */
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  }
+  
+  /* Brand text */
+  /* .navbar-brand {
+    color: #ffffff; 
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+   */
+  /* Navbar links */
+  .nav-link {
+    color: #000000; /* Black text color for links */
+    font-size: 1rem;
+    font-weight: 500;
+    margin-right: 15px;
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+  }
+  
+  .nav-link:hover {
+    color: #333333; /* Darker black on hover */
+    text-shadow: 0 0 5px #ffffff; /* Subtle glow on hover */
+  }
+  
+  .nav-link.active {
+    font-weight: bold; /* Bold text for active links */
+    text-decoration: underline; /* Underline for active links */
+  }
+  
+  .nav-link.disabled {
+    color: #a0a0a0; /* Gray for disabled links */
+    cursor: not-allowed;+
+  }
+  
+  /* Navbar-toggler icon */
+  .navbar-toggler-icon {
+    background-color: #ffffff; /* White for toggler icon */
+    border-radius: 2px;
+  }
+  
+  /* Collapsed navbar background */
+  .collapse.navbar-collapse {
+    background-color: #ffffff; /* Darker blue for collapsed menu */
+    padding: 10px;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .nav-link {
+      color: #000000; /* Black for mobile links */
+      margin-right: 0;
+      padding: 10px 0;
+    }
+  }
+  
+  
+  /* Parallax Section */
+  .parallax-section {
+    background-image: url('https://th.bing.com/th/id/R.1141b2bf4766da691a06d805c74d2092?rik=i2nKNr28%2fDgiBw&riu=http%3a%2f%2fimages4.alphacoders.com%2f600%2f600912.jpg&ehk=UmS3g3wR%2b0EHU6ISN9RRCYPdnGvQIJ5WuNZsa22O%2fPI%3d&risl=&pid=ImgRaw&r=0');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 100px 0;
+    height: 100vh; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Container for form and content */
+  .container {
+    background: rgba(255, 255, 255, 0.8); /* Semi-transparent background for readability */
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .container h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Brand Images */
+  .brand-images {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .brand-images img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .brand-images img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Form Styling */
+  .form-group {
+    margin-bottom: 15px;
+    text-align: left;
+  }
+  
+  label {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 5px;
+    display: inline-block;
+  }
+  
+  input[type="text"],
+  input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    outline: none;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+  }
+  
+  input[type="text"]:focus,
+  input[type="number"]:focus {
+    border-color: #333;
+  }
+  
+  /* Submit Button */
+  .submit-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #333;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .submit-btn:hover {
+    background-color: #555;
+  }
+  
+  /* Left Upper Image */
+  .left-upper-image {
+    position: absolute;
+    top: 200px;
+    left: 200px;
+    width: 300px;
+    height: auto;
+  }
+  
+  
+  
+  
+  
+  
+  
+  /* .card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  } */
+  
+  
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  }
+  h1.mt-4.mb-4 {
+    text-align: center;
+    margin-top: 1rem; /* Optional, already applied with mt-4 */
+    margin-bottom: 1rem; /* Optional, already applied with mb-4 */
+  }
+  
+  .card-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .card-text {
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    border: none;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+  }
+  
+  .text-muted {
+    color: #6c757d !important;
+  }
+  
+  
+  .card {
+    padding: 15px; /* Adjust as needed */
+    margin: 10px;  /* Add margin for spacing between cards */
+  }
+  .row::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  

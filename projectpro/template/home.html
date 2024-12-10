@@ -1,0 +1,174 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet"href="{%static 'css/style.css'%}">
+</head>
+<body>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"><img src={% static 'image/eco-friendly-car-symbol-logo-vector-icon-image-eco-friendly-car-symbol-logo-vector-243899427.webp' %} width="50 px" height="50 px"></a>
+          <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <!-- <a class="nav-link active" aria-current="page" href="#">HOME</a> -->
+        <a class="nav-link" href="#">HOME</a>
+        <a class="nav-link" href="#">CARS</a>
+        <a class="nav-link" href="#">ABOUT US</a>
+        <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+      </div>
+    </div>
+        </div>
+      </nav>
+
+    <section class="parallax-section">
+      <div class="container">
+        <h1 style="font-size: 28px;font-family:'Times New Roman', Times, serif; font-weight: bold; color: #333; text-align: center; margin-bottom: 20px;">
+          Selection Form
+      </h1>
+    
+          <!-- Brand Images -->
+          <div class="brand-images">
+              <img src="{% static 'image/OIP.jpg' %}" alt="Brand 1" id="brand1" onclick="selectBrand('Brand 1')" width="100px" height="100px">
+              <img src="{% static 'image/R (1).jpg' %}" alt="Brand 2" id="brand2" onclick="selectBrand('Brand 2')" width="100px" height="100px">
+              <img src="{% static 'image/R.jpg' %}" alt="Brand 3" id="brand3" onclick="selectBrand('Brand 3')" width="100px" height="100px">
+              <!-- <img src="{% static 'image/download.jpg' %}" alt="Brand 3" id="brand3" onclick="selectBrand('Brand 3')" width="100px" height="100px"> -->
+              <img src="{% static 'image/OIP (2).jpg' %}" alt="Brand 3" id="brand3" onclick="selectBrand('Brand 3')" width="100px" height="100px">
+              <img src="{% static 'image/OIP (3).jpg' %}" alt="Brand 3" id="brand3" onclick="selectBrand('Brand 3')" width="100px" height="100px">
+          </div>
+    
+          <!-- Product Form -->
+          <form id="productForm">
+              <div class="form-group">
+                  <label for="quantity">Brand</label>
+                  <input type="text" id="quantity" name="quantity"  required>
+              </div>
+              <div class="form-group">
+                <label for="quantity">Model</label>
+                <input type="text" id="quantity" name="quantity"  required>
+            </div>
+            <div class="form-group">
+              <label for="quantity">Price</label>
+              <input type="number" id="quantity" name="quantity"  required>
+          </div>
+              
+            
+    
+           
+    
+              <div class="form-group">
+                  <button type="submit" class="submit-btn">Submit</button>
+              </div>
+          </form>
+      </div>
+  </section>
+
+</section>
+
+
+
+    
+<h1 class="mt-4 mb-4">Sedan</h1>
+<div class="row">
+    {% for car in sedan %}
+    <div class="col-md-4 mb-4">
+        <div class="card">
+            {% if car.Image %}
+            <img src="{{ car.Image.url }}" class="card-img-top img-fluid" alt="{{ car.Name }}">
+            {% else %}
+            <img src="/static/images/default.png" class="card-img-top img-fluid" alt="Default Image">
+            {% endif %}
+            <div class="card-body">
+                <h5 class="card-title">{{ car.Name }}</h5>
+                <p class="card-text">description:{{car.description}}</p>
+                <p class="card-text">Price: ${{ car.price }}</p>
+                <form method="POST" action="{% url 'payment_page' product_id=car.id %}">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-primary">BUY NOW</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% empty %}
+    <div class="col-12">
+        <p>No Products Available</p>
+    </div>
+    {% endfor %}
+</div>
+ 
+<h1 class="mt-4 mb-4">hatchback</h1>
+<div class="row">
+    {% for car in hatchback %}
+    <div class="col-md-4 mb-4">
+        <div class="card">
+            {% if car.Image %}
+            <img src="{{ car.Image.url }}" class="card-img-top img-fluid" alt="{{ car.Name }}">
+            {% else %}
+            <img src="/static/images/default.png" class="card-img-top img-fluid" alt="Default Image">
+            {% endif %}
+            <div class="card-body">
+                <h5 class="card-title">{{ car.Name }}</h5>
+                <p class="card-text">description:{{car.description}}</p>
+                <p class="card-text">Price: ${{ car.price }}</p>
+                <form method="POST" action="{% url 'payment_page' product_id=car.id %}">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-primary">BUY NOW</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% empty %}
+    <div class="col-12">
+        <p>No Products Available</p>
+    </div>
+    {% endfor %}
+</div>
+<h1 class="mt-4 mb-4">premium</h1>
+<div class="row">
+    {% for car in premium %}
+    <div class="col-md-4 mb-4">
+        <div class="card">
+            {% if car.Image %}
+            <img src="{{ car.Image.url }}" class="card-img-top img-fluid" alt="{{ car.Name }}">
+            {% else %}
+            <img src="/static/images/default.png" class="card-img-top img-fluid" alt="Default Image">
+            {% endif %}
+            <div class="card-body">
+                <h5 class="card-title">{{ car.Name }}</h5>
+                <p class="card-text">description:{{car.description}}</p>
+                <p class="card-text">Price: ${{ car.price }}</p>
+                <form method="POST" action="{% url 'payment_page' product_id=car.id %}">
+                    {% csrf_token %}                    
+                    <div class="button-container">
+                        <button type="submit" class="btn btn-primary">BUY NOW</button>
+                      </div>
+                      
+                </form>
+            </div>
+        </div>
+    </div>
+    {% empty %}
+    <div class="col-12">
+        <p>No Products Available</p>
+    </div>
+    {% endfor %}
+</div>
+
+
+  
+
+
+
+     -->
+  
+</body>
+</html>

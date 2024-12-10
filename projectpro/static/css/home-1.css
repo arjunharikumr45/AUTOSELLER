@@ -1,0 +1,136 @@
+/* Basic Reset
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+  
+body, html {
+    height: 100%;
+    overflow-x: hidden;
+}
+  
+
+.parallax {
+    background-image: url('https://wallpapercave.com/wp/wp3745840.jpg');
+    height: 100vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+  
+
+.content {
+    text-align: center;
+    padding: 50px;
+    font-family: Arial, sans-serif;
+    position: relative;
+    z-index: 1;
+    color: white;
+}
+  */
+  
+  <!-- Internal CSS for centering the navbar content and adding overlay text -->
+  <style>
+      /* Center-aligning the navbar content */
+      .navbar {
+          padding: 1rem 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+      }
+
+      .navbar-brand {
+          display: flex;
+          align-items: center;
+          background-color: rgb(255, 255, 255);
+      }
+
+      /* Adding spacing between logo and text */
+      .navbar-brand img {
+          margin-right: 10px;
+      }
+
+      /* Parallax Background */
+      .parallax {
+          background-image: url('https://wallpapercave.com/wp/wp3745840.jpg');
+          height: 100vh;
+          background-attachment: fixed;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+          position: relative;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: white;
+      }
+
+      /* Overlay Text Style */
+      .parallax .overlay-text {
+          font-size: 2.5rem;
+          font-family: Arial, sans-serif;
+          text-align: center;
+          background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+          padding: 20px;
+          border-radius: 10px;
+      }
+
+      /* Foreground Content */
+      .content {
+          text-align: center;
+          padding: 50px;
+          font-family: Arial, sans-serif;
+          color: white;
+          background-color: #333;
+      }
+
+
+
+/* Style the form group container */
+.form-group {
+    display: flex; /* Align content inside the form group */
+    justify-content: center; /* Center the button horizontally */
+    margin-top: 20px; /* Add spacing above the button */
+}
+
+/* Style the submit button */
+.submit-btn {
+    background: linear-gradient(90deg, #007BFF, #0056b3); /* Blue gradient background */
+    color: #ffffff; /* White text */
+    font-size: 16px; /* Font size */
+    font-family: Arial, sans-serif; /* Font family */
+    padding: 12px 30px; /* Button padding */
+    border: none; /* Remove borders */
+    border-radius: 8px; /* Slightly rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    text-transform: uppercase; /* Uppercase text */
+    box-shadow: 0 6px 12px rgba(0, 123, 255, 0.2); /* Soft shadow for depth */
+    transition: all 0.3s ease; /* Smooth transitions for hover and active states */
+    position: relative; /* Position for the ripple effect */
+    overflow: hidden; /* Hide overflow for background effect */
+}
+
+/* Hover effect for the button */
+.submit-btn:hover {
+    background: linear-gradient(90deg, #0056b3, #003d80); /* Darker blue on hover */
+    box-shadow: 0 8px 16px rgba(0, 123, 255, 0.3); /* Enhanced shadow */
+    transform: translateY(-3px); /* Slight elevation */
+}
+
+/* Active (Pressed) state */
+.submit-btn:active {
+    background: linear-gradient(90deg, #004085, #002a5b); /* Even darker blue */
+    transform: translateY(2px); /* Button "sinks" slightly */
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2); /* Reduced shadow */
+}
+/* Focus effect */
+.submit-btn:focus {
+    outline: none; /* Remove default focus outline */
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5); /* Blue glow for focus */
+}
+.submit-btn:active::after {
+    left: 0;
+    transition: all 0.2s ease-out;
+}
